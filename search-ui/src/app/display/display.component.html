@@ -1,0 +1,29 @@
+<div class="background">
+    <input class="search" [(ngModel)]="searchTitle" placeholder="Enter Movie Title to Search"/>
+    <button class="btn btn-success search-btn" (click)="onSearchClick()">Search</button>
+</div>
+
+<br/>
+  
+  <div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let movie of movieList">
+          <div class="card" style="width: 18rem;">
+            <div class="bd-placeholder-img card-img-top" style="width: 18rem; height: 18rem; overflow: hidden;">
+              <img  style="width: 18rem;" [src]="movie.Poster" onerror="this.onerror=null; this.src='../../assets/Default_poster.jpg'">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ movie.Title }}</h5>
+              <p class="card-text"> Year : {{ movie.Year }} , Type: {{ movie.Type }} </p>
+              <a class="btn btn-primary" (click)="onViewClick(movie.imdbID)">View on IMDB</a>
+            </div>
+          </div>
+          <br/>
+        </div>
+
+        <div class="container-fluid alert alert-warning text-center" *ngIf="emptyList">
+          <strong>No Results Found!</strong> Please try entering a different search term.
+        </div>
+          
+    </div>
+  </div>

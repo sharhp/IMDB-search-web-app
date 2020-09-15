@@ -1,0 +1,24 @@
+<div class="sky">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <img class="img-fluid" src="../../assets/OMDB_search.png">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <input [(ngModel)]="searchTitle" class="search" placeholder="Enter Movie Title to Search"/>
+        
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 7%">
+      <div class="col">
+        <button class="btn btn-success search-btn"
+          (click)="onSearchClick()">Search</button>
+      </div>
+    </div>  
+
+  </div>
+</div>
